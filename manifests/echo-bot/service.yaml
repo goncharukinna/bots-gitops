@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: echo-bot
+  namespace: default
+  labels:
+    app: echo-bot
+spec:
+  selector:
+    app: echo-bot
+  ports:
+  - name: http
+    port: 80
+    targetPort: 5000

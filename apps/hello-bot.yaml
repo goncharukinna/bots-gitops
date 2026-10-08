@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: hello-bot
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/goncharukinna/bots-gitops.git'
+    targetRevision: HEAD
+    path: manifests/hello-bot
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
