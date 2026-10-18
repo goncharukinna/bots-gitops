@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: random-bot
-        image: docin82/random-bot:21
+        image: docin82/random-bot:3
         imagePullPolicy: IfNotPresent
         env:
         - name: BOT_TOKEN
