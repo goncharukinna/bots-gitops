@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: echo-bot
-        image: docin82/echo-bot:latest
+        image: docin82/echo-bot:3
         imagePullPolicy: IfNotPresent
         env:
         - name: BOT_TOKEN
