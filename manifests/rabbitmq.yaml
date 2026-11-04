@@ -25,7 +25,7 @@ spec:
         - name: RABBITMQ_DEFAULT_USER
           value: "admin"
         - name: RABBITMQ_DEFAULT_PASS
-          value: "admin" # В реальном проекте используй Secret!
+          value: "admin123" # В реальном проекте используй Secret!
         resources:
           requests:
             memory: "128Mi"
