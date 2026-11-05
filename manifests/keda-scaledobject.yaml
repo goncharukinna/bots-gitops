@@ -1,0 +1,21 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: random-bot-scaledobject
+  namespace: default
+spec:
+  scaleTargetRef:
+    name: random-bot  # Имя твоего Deployment
+  minReplicaCount: 1
+  maxReplicaCount: 5
+  pollingInterval: 10   # Как часто проверять очередь (в секундах)
+  cooldownPeriod: 300   # Сколько ждать перед уменьшением подов
+  triggers:
+  - type: rabbitmq
+    metadata:
+      protocol: amqp
+      queueName: telegram_messages  # Имя очереди, которую будем мониторить
+      mode: QueueLength
+      value: "10"  # Если в очереди больше 10 сообщений — добавляем под
+    authenticationRef:
+      name: keda-rabbitmq-auth
