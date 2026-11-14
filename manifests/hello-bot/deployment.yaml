@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: hello-bot
-        image: docin82/hello-bot:2
+        image: docin82/hello-bot:fa321cb896df66b5489c9fedd0f8e73355939f3b
         imagePullPolicy: IfNotPresent
         env:
         - name: BOT_TOKEN
