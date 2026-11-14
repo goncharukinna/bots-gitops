@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: echo-bot
-        image: docin82/echo-bot:3
+        image: docin82/echo-bot:e530c3f2c10732df9756e389eb10122691220ce8
         imagePullPolicy: IfNotPresent
         env:
         - name: BOT_TOKEN
