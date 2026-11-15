@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: keda-bot
-        image: docin82/keda-bot:2757895e23fc02c7283ab284edf1ae9dff047016
+        image: docin82/keda-bot:1
         imagePullPolicy: Always
         env:
         - name: BOT_TOKEN
