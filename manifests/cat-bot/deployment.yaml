@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: cat-bot
-        image: docin82/cat-bot:6
+        image: docin82/cat-bot:9a4c3914c21348b548e2b11e7d82dde3aef49c74
         imagePullPolicy: IfNotPresent
         env:
         - name: BOT_TOKEN
