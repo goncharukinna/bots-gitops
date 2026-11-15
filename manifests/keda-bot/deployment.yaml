@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: keda-bot
-        image: docin82/keda-bot:latest
+        image: docin82/keda-bot:1
         imagePullPolicy: Always
         env:
         - name: BOT_TOKEN
@@ -27,6 +27,18 @@ spec:
               key: BOT_TOKEN
         - name: RABBITMQ_URL
           value: "amqp://admin:admin123@rabbitmq.default.svc.cluster.local:5672/"
+        # --- Настройки подключения к PostgreSQL ---
+        - name: DB_HOST
+          value: "host.docker.internal"
+        - name: DB_PORT
+          value: "5432"
+        - name: DB_NAME
+          value: "keda_bot"
+        - name: DB_USER
+          value: "admin"
+        - name: DB_PASSWORD
+          value: "mysecretpassword" # <--- ОБЯЗАТЕЛЬНО ЗАМЕНИТЕ НА РЕАЛЬНЫЙ ПАРОЛЬ
+        # ------------------------------------------
         resources:
           requests:
             memory: "64Mi"
